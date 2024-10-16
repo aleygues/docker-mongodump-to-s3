@@ -59,9 +59,9 @@ function sh(command: string, cwd: string) {
         console.log(`error: ${error.message}`);
         return reject();
       }
-      if (stderr) {
+      /* if (stderr) {
         return reject(stderr);
-      }
+      } */
       resolve(stdout);
     });
   });
