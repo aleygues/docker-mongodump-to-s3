@@ -1,5 +1,5 @@
 import { exec } from "child_process";
-import { format, subSeconds } from "date-fns";
+import { format, subDays } from "date-fns";
 import { CronJob } from "cron";
 import fs from "fs";
 import {
@@ -297,7 +297,7 @@ async function clearDumps(
   );
 
   const minDatetime = `${fullPrefixWithUnderscore}${format(
-    subSeconds(new Date(), daysRetention),
+    subDays(new Date(), daysRetention),
     DATETIME_FORMAT
   )}.json`;
 
